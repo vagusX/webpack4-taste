@@ -7,8 +7,14 @@ const compiler = webpack(webpackConf)
 
 const app = express()
 
+const port = Number(process.env.PORT) || 8010
+
+require('webpack-hot-client')(compiler, {
+  port: port + 10
+})
+
 app.use(require('webpack-dev-middleware')(compiler, {
-  // publicPath: webpackConf.output.publicPath,
+  publicPath: webpackConf.output.publicPath,
   noInfo: true,
   quiet: true,
   stats: {
@@ -17,7 +23,4 @@ app.use(require('webpack-dev-middleware')(compiler, {
   }
 }))
 
-app.use(require('webpack-hot-middleware')(compiler))
-
-const port = process.env.PORT || 5432
 app.listen(port, () => console.log('App listening on port ', port))
