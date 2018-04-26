@@ -1,4 +1,7 @@
 import React from 'react'
+
+import ExampleComp from '../../components/Example'
+
 import styles from './styles.module.css'
 
 export default class extends React.Component {
@@ -11,7 +14,7 @@ export default class extends React.Component {
   render () {
     return (
       <div className={styles.normal}>
-        <h1 className={styles.title}>Welcome to webpack4!</h1>
+        <h1 className={styles.title}>Welcome to webpack Taste!</h1>
         <div className={styles.welcome} />
         <ul className={styles.list}>
           <li>
@@ -21,6 +24,7 @@ export default class extends React.Component {
             <a href='https://medium.com/webpack/webpack-4-beta-try-it-today-6b1d27d7d7e2'>Getting Started</a>
           </li>
         </ul>
+        <ExampleComp />
       </div>
     )
   }

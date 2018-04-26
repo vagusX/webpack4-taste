@@ -1,8 +1,5 @@
-import React from 'react'
 import { hot } from 'react-hot-loader'
 
-import IndexPage from './pages/IndexPage'
+import Main from './pages/Main'
 
-const App = () => <div><IndexPage /></div>
-
-export default hot(module)(App)
+export default hot(module)(Main)

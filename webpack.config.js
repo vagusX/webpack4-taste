@@ -35,18 +35,7 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192,
-              options: {
-                name (file) {
-                  if (process.env.NODE_ENV === 'development') {
-                    return '[path][name].[ext]'
-                  }
-
-                  return 'static/media/[name].[hash:8].[ext]'
-                },
-                outputPath: 'images/',
-                publicPath: 'assets/'
-              }
+              limit: 8192
             }
           }
         ]
