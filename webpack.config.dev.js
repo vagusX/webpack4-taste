@@ -1,4 +1,5 @@
 const merge = require('webpack-merge')
+const webpack = require('webpack')
 const path = require('path')
 const threadLoader = require('thread-loader')
 
@@ -11,7 +12,7 @@ threadLoader.warmup({}, [
 
 module.exports = merge(baseConfig, {
   mode: 'development',
-  devtool: 'cheap-eval-source-map',
+  devtool: 'source-map',
   module: {
     rules: [
       {
@@ -39,5 +40,7 @@ module.exports = merge(baseConfig, {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+  ]
 })
